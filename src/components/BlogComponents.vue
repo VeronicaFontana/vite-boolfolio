@@ -20,6 +20,10 @@ export default {
     <ul>
         <li v-for="project in store.projects" :key="project.id" >
             <p class="title">{{ project.name }}</p>
+            <div>
+                <em>{{ project.tecnology?.name }}</em>
+                <strong v-for="tecnology in project.tecnologies" :key="tecnology.id" >{{ tecnology.name }}</strong>
+            </div>
         </li>
     </ul>
 </template>

@@ -12,7 +12,6 @@ export default {
     <div class="text-center py-5">
         <h4 class="my-5">{{ title }}</h4>
         <div class="lds-hourglass"></div>
-
     </div>
 </template>
 
