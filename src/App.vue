@@ -2,18 +2,23 @@
 
 import axios from "axios";
 import {store} from "./data/store";
+import BlogComponents from "./components/BlogComponents.vue";
 
 export default{
   name: "App",
+  components:{
+    BlogComponents
+  },
   data(){
     return{
+      
     }
   },
   methods:{
     getApi(){
       axios.get(store.apiUrl + "projects")
         .then(results =>{
-          console.log(results.data);
+          store.projects = results.data;
         })
     }
   },
@@ -27,7 +32,7 @@ export default{
 <template>
 
   <div>
-    <h1>Prova</h1>
+    <BlogComponents />
   </div>
 
 </template>
