@@ -3,21 +3,24 @@
 import axios from "axios";
 import {store} from "./data/store";
 import BlogComponents from "./components/BlogComponents.vue";
+import Loader from './components/partials/Loader.vue';
 
 export default{
   name: "App",
   components:{
-    BlogComponents
+    BlogComponents,
+    Loader
   },
   data(){
     return{
-      
+      isLoaded: false
     }
   },
   methods:{
     getApi(){
       axios.get(store.apiUrl + "projects")
         .then(results =>{
+          this.isLoaded = true;
           store.projects = results.data;
         })
     }
@@ -32,7 +35,12 @@ export default{
 <template>
 
   <div>
-    <BlogComponents />
+    <Loader v-if="!isLoaded" />
+    
+    <div v-else>
+      <BlogComponents />
+    </div>
+    
   </div>
 
 </template>
