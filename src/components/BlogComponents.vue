@@ -17,15 +17,21 @@ export default {
 
 <template>
     <h1>I progetti</h1>
-    <ul>
-        <li v-for="project in store.projects" :key="project.id" >
-            <p class="title">{{ project.name }}</p>
+    <div>
+        <div class="card" style="width: 18rem;" v-for="project in store.projects" :key="project.id">
+            <div class="card-body">
+                <h5 class="card-title">{{ project.name }}</h5>
+                <p class="card-text">{{ project.description }}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{ project.creation_date }}</li>
+            </ul>
             <div>
-                <em>{{ project.tecnology?.name }}</em>
+                <em>{{ project.type?.name }}</em>
                 <strong v-for="tecnology in project.tecnologies" :key="tecnology.id" >{{ tecnology.name }}</strong>
             </div>
-        </li>
-    </ul>
+        </div>
+    </div>
 </template>
 
 

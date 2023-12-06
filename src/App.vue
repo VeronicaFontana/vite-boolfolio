@@ -52,7 +52,7 @@ export default{
   <div>
     <Loader v-if="!isLoaded" />
     
-    <div v-else>
+    <div class="main-wrapper" v-else>
       <BlogComponents />
       <Navigator
         :paginator="paginator"
