@@ -3,6 +3,7 @@ import Home from "./assets/pages/home.vue";
 import About from "./assets/pages/about.vue";
 import Contacts from "./assets/pages/contacts.vue";
 import Blog from "./assets/pages/blog.vue";
+import projectDetail from "./assets/pages/projectDetail.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -26,7 +27,13 @@ const router = createRouter({
             path: "/blog",
             name: "blog",
             component: Blog
+        },
+        {
+            path: "/dettaglio-del-progetto/:slug",
+            name: "projectDetail",
+            component: projectDetail
         }
+
     ]   
 
 }) 
