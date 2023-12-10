@@ -5,13 +5,15 @@ import {store} from "./data/store";
 import BlogComponents from "./components/BlogComponents.vue";
 import Loader from './components/partials/Loader.vue';
 import Navigator from "./components/partials/Navigator.vue";
+import Header from "./components/partials/Header.vue";
 
 export default{
   name: "App",
   components:{
     BlogComponents,
     Loader,
-    Navigator
+    Navigator,
+    Header
   },
   data(){
     return{
@@ -52,7 +54,11 @@ export default{
   <div>
     <Loader v-if="!isLoaded" />
     
+    
     <div class="main-wrapper" v-else>
+      <Header />
+
+      <RouterView />
       <BlogComponents />
       <Navigator
         :paginator="paginator"
