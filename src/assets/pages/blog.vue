@@ -52,7 +52,6 @@ export default{
     <div>
         <Loader v-if="!isLoaded" />
         
-        
         <div class="main-wrapper" v-else>
         <BlogComponents />
         <Navigator
